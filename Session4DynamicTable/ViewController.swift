@@ -55,14 +55,31 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var academyTableView: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
         // Do any additional setup after loading the view.
         academyTableView.dataSource = self
         
+        academyTableView.delegate = self
+        
         academyTableView.register(UINib(nibName: "AcademyTableViewCell", bundle: nil), forCellReuseIdentifier: "AcademyCell")
         
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "moveToDetail", sender: dummyAcademyData[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "moveToDetail" {
+            if let detailViewController = segue.destination as? DetailViewController {
+                detailViewController.academyModel = sender as? AcademyModel
+            }
+        }
     }
 }
 

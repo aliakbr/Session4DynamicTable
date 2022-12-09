@@ -32,11 +32,66 @@
                     </view>
                     <connections>
                         <outlet property="academyTableView" destination="wVs-q5-puX" id="lPc-q1-Awa"/>
+                        <segue destination="3lZ-Oh-6Uj" kind="show" identifier="moveToDetail" id="nZa-Jd-ffZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="48" y="-2"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="eFM-Om-qmd">
+            <objects>
+                <viewController id="3lZ-Oh-6Uj" customClass="DetailViewController" customModule="Session4DynamicTable" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Wi-fP-Rod">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Ij-rt-fHa">
+                                <rect key="frame" x="96.666666666666686" y="83" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="lth-yh-VJj"/>
+                                    <constraint firstAttribute="width" constant="200" id="uS3-lT-xIa"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qs-tu-bmi">
+                                <rect key="frame" x="12" y="295" width="369" height="25.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKH-1H-jp5">
+                                <rect key="frame" x="12" y="332.33333333333331" width="369" height="19.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MPh-hz-XPr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MPh-hz-XPr" firstAttribute="trailing" secondItem="iKH-1H-jp5" secondAttribute="trailing" constant="12" id="4ey-ML-6iq"/>
+                            <constraint firstItem="8Ij-rt-fHa" firstAttribute="top" secondItem="MPh-hz-XPr" secondAttribute="top" constant="24" id="9dT-Ya-mNv"/>
+                            <constraint firstItem="iKH-1H-jp5" firstAttribute="leading" secondItem="MPh-hz-XPr" secondAttribute="leading" constant="12" id="Iy7-ah-eS3"/>
+                            <constraint firstItem="MPh-hz-XPr" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iKH-1H-jp5" secondAttribute="bottom" constant="12" id="LJs-Bd-z6A"/>
+                            <constraint firstItem="8Ij-rt-fHa" firstAttribute="centerX" secondItem="1Wi-fP-Rod" secondAttribute="centerX" id="SAI-Cf-gWC"/>
+                            <constraint firstItem="8Ij-rt-fHa" firstAttribute="centerX" secondItem="MPh-hz-XPr" secondAttribute="centerX" id="UgV-zA-81J"/>
+                            <constraint firstItem="7qs-tu-bmi" firstAttribute="leading" secondItem="MPh-hz-XPr" secondAttribute="leading" constant="12" id="Wrw-vd-pGL"/>
+                            <constraint firstItem="7qs-tu-bmi" firstAttribute="top" secondItem="8Ij-rt-fHa" secondAttribute="bottom" constant="12" id="bJk-rJ-vGa"/>
+                            <constraint firstItem="iKH-1H-jp5" firstAttribute="top" secondItem="7qs-tu-bmi" secondAttribute="bottom" constant="12" id="lQe-Vu-iTu"/>
+                            <constraint firstItem="MPh-hz-XPr" firstAttribute="trailing" secondItem="7qs-tu-bmi" secondAttribute="trailing" constant="12" id="xfB-pE-kQv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="za3-my-3wk"/>
+                    <connections>
+                        <outlet property="academyImage" destination="8Ij-rt-fHa" id="agw-fM-46N"/>
+                        <outlet property="descLabel" destination="iKH-1H-jp5" id="eHk-uS-LvR"/>
+                        <outlet property="nameLabel" destination="7qs-tu-bmi" id="wkf-bx-PGO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ukC-5W-dX1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="-2"/>
         </scene>
     </scenes>
     <resources>
